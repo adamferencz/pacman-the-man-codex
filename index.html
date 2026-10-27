@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050916">
+  <link rel="icon" href="data:,">
+  <title>PAC-MAN: THE MAN EDITION</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">◕</span><span>PAC-MAN <em>THE MAN EDITION</em></span></div>
+      <div class="top-actions"><span class="live-dot"></span><span class="top-label">ARCADE MODE</span><button id="soundButton" class="icon-button" type="button" aria-label="Vypnout zvuk" title="Zvuk zapnutý">♫</button></div>
+    </header>
+    <section class="game-layout" aria-label="Hra Pac-Man">
+      <div class="mobile-hud" aria-label="Herní stav">
+        <div><span>SKÓRE</span><strong id="mobileScore">000000</strong></div>
+        <div><span>ŽIVOTY</span><strong id="mobileLives">◕ ◕ ◕</strong></div>
+        <div><span>LEVEL</span><strong id="mobileLevel">01</strong></div>
+        <div><span>BONUS</span><strong id="mobileBonus">—</strong></div>
+      </div>
+      <div class="board-panel">
+        <div class="board-heading"><span>01 / BLUDIŠTĚ</span><span id="boardStatus">PŘIPRAV SE</span></div>
+        <div class="canvas-wrap"><canvas id="game" width="672" height="704" aria-label="Herní bludiště"></canvas><div id="overlay" class="overlay"><div class="overlay-card"><div class="eyebrow">NEON ARCADE / 2026</div><div class="hero-symbol">◕</div><h1>PAC-MAN<span>THE MAN EDITION</span></h1><p>Posbírej všechny tečky, pronikni skrz zdi a postav se bossovi THE MAN.</p><button id="mainButton" class="primary-button" type="button">HRÁT <span>↗</span></button><div class="overlay-hint">POHYB <b>W A S D</b> NEBO <b>ŠIPKY</b><br>PAUZA <b>P</b> NEBO <b>ESC</b></div></div></div></div>
+        <div class="board-footer"><span>◈ &nbsp; SBÍREJ. UHÝBEJ. PŘEŽIJ.</span><span id="levelProgress">0 / 0 TEČEK</span></div>
+      </div>
+      <div class="mobile-controls" aria-label="Dotykové ovládání"><button data-dir="up" aria-label="Nahoru">▲</button><div><button data-dir="left" aria-label="Doleva">◀</button><button data-dir="down" aria-label="Dolů">▼</button><button data-dir="right" aria-label="Doprava">▶</button></div><span>nebo táhni prstem po bludišti</span></div>
+      <aside class="sidebar">
+        <div class="side-title">HERNÍ PANEL <span>● LIVE</span></div>
+        <section class="score-card"><div class="card-label">SKÓRE</div><div id="score" class="score-number">000000</div><div class="score-divider"></div><div class="mini-stats"><div><span>ŽIVOTY</span><strong id="lives" class="life-icons">◕ ◕ ◕</strong></div><div><span>ÚROVEŇ</span><strong id="level">01</strong></div></div></section>
+        <section class="info-card"><div class="card-label">RYCHLOST PAC-MANA</div><div class="speed-row"><strong id="speed">100%</strong><span id="speedTier">ZÁKLADNÍ</span></div><div class="meter"><div id="speedBar"></div></div><p>Získávej body a zrychluj.</p></section>
+        <section class="info-card bonus-card"><div class="card-label">AKTIVNÍ BONUSY</div><div id="bonuses" class="bonus-list"><div class="empty-bonus">Zatím žádný aktivní bonus</div></div></section>
+        <section id="bossCard" class="info-card boss-card hidden"><div class="card-label">⚠ THE MAN</div><div class="boss-row"><img src="zeman.png" alt="The Man"><div><strong id="bossLives">♥ ♥ ♥</strong><small>Poraz ho silou blesku</small></div></div></section>
+        <div class="help-card"><div class="card-label">JAK HRÁT</div><p><span class="legend-dot">•</span> Tečky přidávají body</p><p><span class="legend-phase">◆</span> Tyrkysový bonus: průchod zdí</p><p><span class="legend-power">ϟ</span> Fialový bonus: útok na bosse</p><p><span class="legend-boss">●</span> Vyhni se duchům</p></div>
+        <div class="sidebar-actions"><button id="pauseButton" type="button">Ⅱ &nbsp; PAUZA</button><button id="restartButton" type="button">↻ &nbsp; RESTART</button></div>
+      </aside>
+    </section>
+    <footer class="page-footer"><span>THE MAN IS ALWAYS WATCHING.</span><span>VYTVOŘENO PRO HRÁČE · 2026</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
