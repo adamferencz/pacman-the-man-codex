@@ -2,6 +2,8 @@
 
 Hratelná webová arkáda podle zadání v `pacman_the_man_prompt.md`.
 
+**Online hra:** [adamferencz.github.io/pacman-the-man-codex](https://adamferencz.github.io/pacman-the-man-codex/)
+
 ## Spuštění
 
 Otevřete `index.html` v moderním prohlížeči. Hra běží lokálně bez instalace, serveru a backendu. Online připojení slouží jen pro načtení volitelného webového fontu; hra funguje i bez něj.
